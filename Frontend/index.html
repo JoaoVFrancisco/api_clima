@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema Climático</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Sistema de Registro Climático</h1>
+        
+        <!-- Seção de Cadastro de Localidade -->
+        <div class="section">
+            <h2>Cadastrar Localidade</h2>
+            <form id="formLocalidade">
+                <div class="form-group">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" required>
+                </div>
+                <div class="form-group">
+                    <label for="estado">Estado:</label>
+                    <input type="text" id="estado" required>
+                </div>
+                <div class="form-group">
+                    <label for="pais">País:</label>
+                    <input type="text" id="pais" required>
+                </div>
+                <button type="submit">Cadastrar Local</button>
+            </form>
+            <div id="localidadeMessage" class="message"></div>
+        </div>
+        
+        <!-- Seção de Registro Climático -->
+        <div class="section">
+            <h2>Registrar Dados Climáticos</h2>
+            <form id="formRegistro">
+                <div class="form-group">
+                    <label for="localidadeId">Localidade:</label>
+                    <select id="localidadeId" required>
+                        <option value="">Carregando localidades...</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="data">Data:</label>
+                    <input type="date" id="data" required>
+                </div>
+                <div class="form-group">
+                    <label for="horario">Horário:</label>
+                    <input type="time" id="horario" required>
+                </div>
+                <div class="form-group">
+                    <label for="temperatura">Temperatura (°C):</label>
+                    <input type="number" step="0.1" id="temperatura" required>
+                </div>
+                <button type="submit">Registrar Dados</button>
+            </form>
+            <div id="registroMessage" class="message"></div>
+        </div>
+        
+        <!-- Seção de Visualização -->
+        <div class="section">
+            <h2>Registros Climáticos</h2>
+            <div class="filter-group">
+                <label for="filtroLocalidade">Filtrar por Localidade:</label>
+                <select id="filtroLocalidade">
+                    <option value="">Todas</option>
+                </select>
+                <button id="btnAtualizar">Atualizar</button>
+            </div>
+            <div id="registrosContainer">
+                <p>Carregando registros...</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
